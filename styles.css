@@ -1,0 +1,325 @@
+/* Variables de color y tipografía */
+:root {
+    --color-bg: #FAF8F5;        /* Crema suave */
+    --color-surface: #FFFFFF;   /* Blanco puro */
+    --color-primary: #4A6B5D;   /* Verde salvia profundo */
+    --color-primary-dark: #365045;
+    --color-accent: #D98A6C;    /* Terracota cálido */
+    --color-text: #2C3333;      /* Carbón suave */
+    --color-text-light: #646E6E;
+    --font-sans: 'Montserrat', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
+
+/* Reseteo básico y scroll suave */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* 1. BARRA SUPERIOR (NAVBAR) */
+header {
+    background-color: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(74, 107, 93, 0.1);
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--color-accent);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primary);
+}
+
+/* 2. SECCIÓN PRINCIPAL (HERO) */
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(rgba(44, 51, 51, 0.55), rgba(44, 51, 51, 0.55)),
+                url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #FFFFFF;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero-tag {
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin-bottom: 2.2rem;
+    color: #EAEAEA;
+    font-weight: 400;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    background-color: var(--color-accent);
+    color: #FFFFFF;
+    padding: 1rem 2.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 138, 108, 0.3);
+}
+
+.btn:hover {
+    background-color: #c57658;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: inline-block;
+    margin-top: 1.2rem;
+    padding: 0.7rem 1.5rem;
+    border: 1.5px solid var(--color-primary);
+    color: var(--color-primary);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+/* 3. SECCIÓN INTERMEDIA (CLASES Y PLANES) */
+.section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5.5rem 2rem;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 3.5rem auto;
+}
+
+.section-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.3rem;
+    color: var(--color-primary);
+    margin-bottom: 0.8rem;
+}
+
+.section-header p {
+    color: var(--color-text-light);
+    font-size: 1.05rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--color-surface);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(74, 107, 93, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(74, 107, 93, 0.12);
+}
+
+.card-badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-text);
+}
+
+.card p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.card-details {
+    border-top: 1px solid #F0EFEA;
+    padding-top: 1.2rem;
+}
+
+.price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.price span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--color-text-light);
+}
+
+/* Llamado a la acción final (CTA Banner) */
+.cta-banner {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin: 0 auto 5rem auto;
+    max-width: 1036px;
+}
+
+.cta-banner h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.cta-banner p {
+    max-width: 550px;
+    margin: 0 auto 1.8rem auto;
+    color: #E0EAE5;
+}
+
+/* 4. PIE DE PÁGINA (FOOTER) */
+footer {
+    background-color: var(--color-text);
+    color: #D5D9D9;
+    padding: 4rem 2rem 2rem 2rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-col p, .footer-col a {
+    color: #B0B7B7;
+    font-size: 0.92rem;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col a:hover {
+    color: var(--color-accent);
+}
+
+.footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8E9696;
+}
+
+/* Ajustes móviles */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 1rem 1.2rem;
+    }
+    .nav-links a {
+        margin-left: 1rem;
+        font-size: 0.85rem;
+    }
+    .cta-banner {
+        margin: 0 1.2rem 4rem 1.2rem;
+    }
+}
